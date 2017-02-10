@@ -20,9 +20,9 @@ export default class LyricsContainer extends React.Component {
   }
 
   componentDidMount(){
-    this.unsubscribe = store.subscribe(()=>{
+    this.unsubscribe = store.subscribe(() => {
       this.setState(store.getState());
-    })
+    });
   }
 
   componentWillUnmount(){
@@ -53,7 +53,7 @@ export default class LyricsContainer extends React.Component {
 
     return (
       <Lyrics
-      text={this.state.text}
+      text={this.state.lyrics.text}
       setArtist={this.setArtist}
       setSong={this.setSong}
       artistQuery={this.state.artistQuery}

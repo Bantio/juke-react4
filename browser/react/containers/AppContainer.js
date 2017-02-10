@@ -12,6 +12,8 @@ import Player from '../components/Player';
 
 import { convertAlbum, convertAlbums, convertSong, skip } from '../utils';
 
+
+
 export default class AppContainer extends Component {
 
   constructor (props) {
@@ -57,11 +59,13 @@ export default class AppContainer extends Component {
 
   play () {
     AUDIO.play();
+    //dispatch startplaying
     this.setState({ isPlaying: true });
   }
 
   pause () {
     AUDIO.pause();
+    //dispatch stopplaying
     this.setState({ isPlaying: false });
   }
 

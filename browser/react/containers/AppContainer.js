@@ -9,10 +9,20 @@ import Albums from '../components/Albums.js';
 import Album from '../components/Album';
 import Sidebar from '../components/Sidebar';
 import Player from '../components/Player';
+import store from '../store';
 
 import { convertAlbum, convertAlbums, convertSong, skip } from '../utils';
 
-
+import {
+  play,
+  pause,
+  load,
+  startSong,
+  toggle,
+  toggleOne,
+  next,
+  prev
+} from '../action-creators/player';
 
 export default class AppContainer extends Component {
 
@@ -58,15 +68,11 @@ export default class AppContainer extends Component {
   }
 
   play () {
-    AUDIO.play();
-    //dispatch startplaying
-    this.setState({ isPlaying: true });
+    store.dispatch(play());
   }
 
   pause () {
-    AUDIO.pause();
-    //dispatch stopplaying
-    this.setState({ isPlaying: false });
+    store.dispatch(pause());
   }
 
   load (currentSong, currentSongList) {

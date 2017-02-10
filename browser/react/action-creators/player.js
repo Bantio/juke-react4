@@ -1,5 +1,13 @@
-const startPlaying = () => ({ type: START_PLAYING });
+import AUDIO from '../audio';
+import {
+  START_PLAYING,
+  STOP_PLAYING,
+  SET_CURRENT_SONG,
+  SET_LIST,
+  SET_PROGRESS
+} from '../constants';
 
+const startPlaying = () => ({ type: START_PLAYING });
 const stopPlaying = () => ({ type: STOP_PLAYING });
 
 const setCurrentSong = (currentSong) => ({
